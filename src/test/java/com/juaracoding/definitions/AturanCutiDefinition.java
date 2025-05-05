@@ -185,8 +185,8 @@ public class AturanCutiDefinition {
     }
     //clickViewButton
     @And("Saya Menekan Tombol Lihat")
-    public void clickViewCuti() {
-        AturanCutiPage.clickViewButton();
+    public void clickViewCuti() { AturanCutiPage.clickViewButton();
+
     }
 
     // Saya Mengubah Nama Cuti

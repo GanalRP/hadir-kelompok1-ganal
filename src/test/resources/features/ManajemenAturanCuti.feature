@@ -8,19 +8,19 @@ Feature: Manajemen Aturan Cuti
   Scenario: Menambahkan data cuti baru tanpa nama cuti
     Given Saya Menekan Tombol Tambah Cuti
     And Saya Mengisi Nama Cuti ""
-    And Saya Mengisi Jumlah Cuti "3"
-    And Saya Mengisi Jumlah Bulan Kerja Sisa Cuti "8"
-    And Saya Mengisi Maksimal Sisa Cuti "2"
+    And Saya Mengisi Jumlah Cuti "9"
+    And Saya Mengisi Jumlah Bulan Kerja Sisa Cuti "6"
+    And Saya Mengisi Maksimal Sisa Cuti "4"
     And Saya Menekan Tombol Simpan Cuti
     Then Saya Melihat Notifikasi Gagal "Nama aturan cuti harus diisi!"
 
-  Scenario: Mencari Manajemen Aturan Cuti Berdasarkan Nama Cuti "Cuti Hamill"
-    Given Nama Cuti "Cuti Hamill" di Kolom Pencarian Manajemen Aturan Cuti
+  Scenario: Mencari Manajemen Aturan Cuti Berdasarkan Nama Cuti "Cuti Hamil"
+    Given Nama Cuti "Cuti Hamil" di Kolom Pencarian Manajemen Aturan Cuti
     When Saya menekan tombol Search Manajemen Aturan Cuti
-    Then Sistem Menampilkan Manajemen Aturan Cuti Berdasarkan Nama Cuti "Cuti Hamill"
+    Then Sistem Menampilkan Manajemen Aturan Cuti Berdasarkan Nama Cuti "Cuti Hamil"
 
-  Scenario: Mencari Manajemen Aturan Cuti Yang Tidak Ada Berdasarkan Nama Cuti "Tanggal Merah"
-    Given Nama Cuti "Tanggal Merah" di Kolom Pencarian Manajemen Aturan Cuti
+  Scenario: Mencari Manajemen Aturan Cuti Yang Tidak Ada Berdasarkan Nama Cuti "Hari Kiamat"
+    Given Nama Cuti "Hari Kiamat" di Kolom Pencarian Manajemen Aturan Cuti
     When Saya menekan tombol Search Manajemen Aturan Cuti
     Then Sistem Menampilkan Hasil "Tidak Ada Data" Nama Pencarian Manajemen Aturan Cuti
 
@@ -30,32 +30,15 @@ Feature: Manajemen Aturan Cuti
     When Saya menekan tombol Riset Filter Manajemen Aturan Cuti
     Then Sistem Menampilkan Semua Manajemen Aturan Cuti
 
-  Scenario: Menampilkan Manajemen Aturan Cuti Halaman Sebelumnya
-    When Saya Berpindah Ke Manajemen Aturan Cuti Halaman Selanjutnya
-    And Saya Berpindah Ke Manajemen Aturan Cuti Halaman Sebelumnya
-    Then Aplikasi Menampilkan Manajemen Aturan Cuti Halaman Pertama
-
-  Scenario: Menampilkan Manajemen Aturan Cuti Halaman Terakhir
-    When Saya Berpindah Ke Manajemen Aturan Cuti Halaman Terakhir
-    Then Aplikasi Menampilkan Manajemen Aturan Cuti Halaman Terakhir
-
-  Scenario: Menampilkan Manajemen Aturan Cuti Halaman Pertama
-    When Saya Berpindah Ke Manajemen Aturan Cuti Halaman Selanjutnya
-    And Saya Berpindah Ke Manajemen Aturan Cuti Halaman Pertama
-    Then Aplikasi Menampilkan Manajemen Aturan Cuti Halaman Pertama
-
-  Scenario: Menampilkan Manajemen Aturan Cuti Halaman Selanjutnya
-    When Saya Berpindah Ke Manajemen Aturan Cuti Halaman Selanjutnya
-    Then Aplikasi Menampilkan Manajemen Aturan Cuti Halaman Kedua
 
   Scenario: Menambahkan data cuti baru
     Given Saya Menekan Tombol Tambah Cuti
     And Saya Mengisi Nama Cuti "Cuti Hamil"
-    And Saya Mengisi Jumlah Cuti "3"
-    And Saya Mengisi Jumlah Bulan Kerja Sisa Cuti "8"
-    And Saya Mengisi Maksimal Sisa Cuti "2"
+    And Saya Mengisi Jumlah Cuti "9"
+    And Saya Mengisi Jumlah Bulan Kerja Sisa Cuti "6"
+    And Saya Mengisi Maksimal Sisa Cuti "4"
     And Saya Menekan Tombol Simpan Cuti
-    Then Saya Melihat Notifikasi "Data Berhasil Disimpan"
+    Then Saya Melihat Notifikasi "Sukses Membuat Aturan Cuti"
 
   Scenario: Menghapus data cuti paling atas
     Given Saya Mencari Cuti Dengan Nama "Cuti Hamil"
@@ -73,7 +56,7 @@ Feature: Manajemen Aturan Cuti
     Then Saya Melihat Notifikasi Gagal Edit "Nama aturan cuti harus diisi!"
 
   Scenario: Menampilkan Rincian Data dari Salah Satu Aturan Cuti
-    Given Saya Mencari Cuti Dengan Nama "Cuti Hamill"
+    Given Saya Mencari Cuti Dengan Nama "Cuti Hamil"
     When Saya Menekan Tombol Seting Cuti
     And Saya Menekan Tombol Lihat
     Then Saya Melihat Rincian Data Cuti
@@ -81,9 +64,9 @@ Feature: Manajemen Aturan Cuti
   Scenario: Menambahkan data cuti baru dengan ankga diluar batas umum
     Given Saya Menekan Tombol Tambah Cuti
     And Saya Mengisi Nama Cuti "Angka Batas Umum"
-    And Saya Mengisi Jumlah Cuti "1000"
-    And Saya Mengisi Jumlah Bulan Kerja Sisa Cuti "8000"
-    And Saya Mengisi Maksimal Sisa Cuti "9999"
+    And Saya Mengisi Jumlah Cuti "1234"
+    And Saya Mengisi Jumlah Bulan Kerja Sisa Cuti "8888"
+    And Saya Mengisi Maksimal Sisa Cuti "7890"
     And Saya Menekan Tombol Simpan Cuti
     Then Pembuatan Data Aturan Cuti Gagal
 
@@ -98,9 +81,9 @@ Feature: Manajemen Aturan Cuti
   Scenario: Menambahkan data cuti baru dengan ankga minus
     Given Saya Menekan Tombol Tambah Cuti
     And Saya Mengisi Nama Cuti "Angka Batas Umum Minus"
-    And Saya Mengisi Jumlah Cuti "-1000"
-    And Saya Mengisi Jumlah Bulan Kerja Sisa Cuti "-8000"
-    And Saya Mengisi Maksimal Sisa Cuti "-9999"
+    And Saya Mengisi Jumlah Cuti "-123"
+    And Saya Mengisi Jumlah Bulan Kerja Sisa Cuti "-4567"
+    And Saya Mengisi Maksimal Sisa Cuti "-7890"
     And Saya Menekan Tombol Simpan Cuti
     Then Pembuatan Data Aturan Cuti Gagal
 

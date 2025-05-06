@@ -12,8 +12,8 @@
 
     <properties>
 
-        <maven.compiler.source default-value="23">${env.javaVersion}</maven.compiler.source>
-        <maven.compiler.target default-value="23">${env.javaVersion}</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <!-- mvn clean test -DtestBrowser=edge -DjavaVersion=17 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>

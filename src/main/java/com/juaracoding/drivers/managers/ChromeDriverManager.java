@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class ChromeDriverManager {
     public static WebDriver make() {
         ChromeOptions options = new ChromeOptions();
-        options.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
+        //options.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
         options.addArguments("--start-maximized");
 
         return new ChromeDriver(options);

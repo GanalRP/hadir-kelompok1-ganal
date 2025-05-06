@@ -2,6 +2,7 @@ package com.juaracoding.pages;
 
 import java.util.List;
 
+import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -9,7 +10,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.juaracoding.drivers.DriverSingleton;
 import com.juaracoding.drivers.utils.DriverWaitHelper;
@@ -38,6 +38,7 @@ public class AturanCutiPage {
     private final By INPUT_NAME_CUTI = By.xpath("//*[@id='name']");
     // button tanggal cuti //button[.//svg[@data-testid="CalendarIcon"]]
 
+    @Getter
     private final By BUTTON_TANGGAL_CUTI = By.xpath("//button[@aria-label='Choose date, selected date is 1 Jan 2025']");
     //// button[contains(@aria-label, 'Choose date')]
 
@@ -121,13 +122,6 @@ public class AturanCutiPage {
                 rowsPerPageOption5Element.click();
                 break;
             }
-            case 10: {
-                WebElement rowsPerPageOption10Element = DriverWaitHelper.DRIVER_WAIT
-                        .until(ExpectedConditions
-                                .elementToBeClickable(ROWS_PER_PAGE_OPTION_10));
-                rowsPerPageOption10Element.click();
-                break;
-            }
             case 25: {
                 WebElement rowsPerPageOption25Element = DriverWaitHelper.DRIVER_WAIT
                         .until(ExpectedConditions
@@ -135,6 +129,7 @@ public class AturanCutiPage {
                 rowsPerPageOption25Element.click();
                 break;
             }
+            case 10:
             default: {
                 WebElement rowsPerPageOption10Element = DriverWaitHelper.DRIVER_WAIT
                         .until(ExpectedConditions
